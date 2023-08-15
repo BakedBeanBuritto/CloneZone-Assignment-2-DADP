@@ -29,7 +29,7 @@ public class Lazer : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player Touched lazer");
-            Invoke("RestartPlayerPosition", 0.1f);
+            RestartPlayerPosition();
         }
 
         if (col.gameObject.CompareTag("FenceClone"))
@@ -40,6 +40,10 @@ public class Lazer : MonoBehaviour
     }
 
     public void RestartPlayerPosition()
+    {
+        Player.transform.position = new Vector2(RestartTarget2.transform.position.x, RestartTarget2.transform.position.y);
+    }
+    public void RestartLazerClonePosition()
     {
         Player.transform.position = new Vector2(RestartTarget2.transform.position.x, RestartTarget2.transform.position.y);
     }
